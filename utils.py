@@ -308,8 +308,8 @@ def save_image(img, path):
         pass
     im = np.array(im)
     image_without_alpha = im[:,:,:3]
-    img = cv2.cvtColor(image_without_alpha, cv2.COLOR_RGBA2BGRA)
-    cv2.imwrite(path, img) 
+    #img = cv2.cvtColor(image_without_alpha, cv2.COLOR_RGBA2BGRA)
+    cv2.imwrite(path, image_without_alpha)
 
 def save_batch_images(output, imgpath, save_dir, alpha=0.5):
     GEN = save_dir.find('-gen') >= 0 or save_dir.find('stereo') >= 0
